@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>금융 뉴스 AI 분석 - Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="title">금융 뉴스 AI 분석</h1>
+        <span class="badge">프론트 기능 데모 (Mock API)</span>
+      </header>
+
+      <section class="panel">
+        <div class="form-grid">
+          <div>
+            <p class="section-title">기사 텍스트</p>
+            <form id="demo-form">
+              <textarea
+                id="article"
+                placeholder="금융 기사 내용을 붙여넣고 AI 분석을 실행해보세요"
+              ></textarea>
+              <div class="button-row">
+                <button id="analyze-btn" type="submit">분석 요청</button>
+                <button class="secondary" id="fill-sample" type="button">샘플 기사 채우기</button>
+              </div>
+              <div class="status-row">
+                <span class="dot"></span>
+                <span id="status">준비 완료</span>
+              </div>
+            </form>
+          </div>
+
+          <div class="result-card">
+            <p class="section-title">분석 결과</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <span style="color: var(--muted); font-size: 13px;">감정(Sentiment)</span>
+              <span id="sentiment-pill" class="sentiment-pill neutral">neutral</span>
+            </div>
+            <p class="section-title" style="margin-top: 8px;">핵심 포인트</p>
+            <ul id="keypoints" class="keypoints"></ul>
+          </div>
+        </div>
+        <p class="footer-note">
+          이 데모는 프론트엔드 동작 확인을 위한 Mock API 기반입니다. 추후 FastAPI 실제 API로 교체됩니다.
+        </p>
+      </section>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
